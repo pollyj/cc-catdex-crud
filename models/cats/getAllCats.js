@@ -1,12 +1,7 @@
 module.exports = (knex, Cat) => {
-  return params => {
-    const { name } = params;
+  return () => {
     return knex("cats")
-      .where({ name })
-      .del()
-      .then(() => {
-        return knex("cats").select();
-      })
+      .select()
       .then(allCats => {
         if (allCats.length) {
           const result = [];
@@ -15,7 +10,7 @@ module.exports = (knex, Cat) => {
           }
           return result;
         }
-        throw new Error("Could not delete cat.");
+        throw new Error("Could not get cats.");
       });
   };
 };

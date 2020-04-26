@@ -24,7 +24,7 @@ module.exports = models => {
         return res.status(400).send(err.message);
       });
 
-  const getCats = (req, res) =>
+  const getAllCats = (req, res) =>
     models.cats
       .list()
       .then(cats => cats.map(cat => cat.serialize()))
@@ -63,7 +63,7 @@ module.exports = models => {
    */
   const router = express.Router();
   router.post("/", createCat);
-  router.get("/", getCats);
+  router.get("/", getAllCats);
   // router.get("/:name", getOneCat);
   router.patch("/", patchCat);
   router.delete("/:name", deleteCat);
