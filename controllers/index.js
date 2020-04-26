@@ -2,12 +2,12 @@ const express = require("express");
 
 const router = express.Router();
 
-const userRouter = require("./user");
-const channelRouter = require("./channel");
+const catRouter = require("./cat");
+// const channelRouter = require("./channel");
 
-module.exports = (models) => {
-  router.use("/users", userRouter(models));
-  router.use("/channels", channelRouter(models));
+module.exports = models => {
+  router.use("/cats", catRouter(models));
+  // router.use("/channels", channelRouter(models));
 
   return router;
 };

@@ -13,14 +13,14 @@ User.prototype.serialize = function() {
   return {
     id: this.id,
     username: this.username,
-    createdAt: moment(this.createdAt).format("hh:mm:ss"),
+    createdAt: moment(this.createdAt).format("hh:mm:ss")
   };
 };
 
-module.exports = (knex) => {
+module.exports = knex => {
   return {
     create: require("./create")(knex, User),
     list: require("./list")(knex, User),
-    get: require("./get")(knex, User),
+    get: require("./get")(knex, User)
   };
 };
