@@ -51,8 +51,7 @@ deleteCatBtn.addEventListener("click", () => {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json"
-    },
-    body: data
+    }
   })
     .then(function(response) {
       return response.json();

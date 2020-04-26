@@ -1,6 +1,6 @@
 module.exports = (knex, Cat) => {
   return params => {
-    const { name } = params;
+    const { name } = JSON.parse(params.name);
     return knex("cats")
       .where({ name: name })
       .del()
