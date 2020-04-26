@@ -8,7 +8,8 @@
     "lint": "eslint --fix .",
     "start": "node index.js",
     "migrate": "knex migrate:latest --knexfile models/knexfile.js",
-    "rollback": "knex migrate:rollback --knexfile models/knexfile.js ",
+    "rollback": "knex migrate:rollback --knexfile models/knexfile.js",
+    "seed": "knex seed:run --knexfile models/knexfile.js",
     "precommit": "pretty-quick --staged"
   },
   "author": "Code Chrysalis",
@@ -18,7 +19,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "express": "^4.16.4",
-    "knex": "^0.15.2",
+    "knex": "^0.21.0",
     "moment": "^2.22.2",
     "morgan": "^1.9.1",
     "pg": "^7.5.0"
