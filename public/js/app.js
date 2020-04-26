@@ -75,14 +75,26 @@ getAllCatsBtn.addEventListener("click", fetchGetAllCats);
 
 const createCatBtn = document.getElementById("create-new-cat");
 createCatBtn.addEventListener("click", () => {
-  const data = document.getElementById("add-cat-data").value;
+  const name = document.getElementById("create-name").value;
+  const age = document.getElementById("create-age").value;
+  const colour = document.getElementById("create-colour").value;
+  const favourite_food = document.getElementById("create-food").value;
+  const favourite_activity = document.getElementById("create-act").value;
+  const jsonData = {
+    name: name,
+    age: age,
+    colour: colour,
+    favourite_food: favourite_food,
+    favourite_activity: favourite_activity
+  };
+
   fetch("/api/cats/", {
     method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json"
     },
-    body: data
+    body: JSON.stringify(jsonData)
   })
     .then(function(response) {
       return response.json();
@@ -95,14 +107,16 @@ createCatBtn.addEventListener("click", () => {
       fetchGetAllCats();
     });
 });
-//example query: {"name": "test", "age": 5, "colour": "white", "favourite_food": "tuna", "favourite_activity": "warbling"}
 
 const deleteCatBtn = document.getElementById("delete-cat");
 deleteCatBtn.addEventListener("click", () => {
-  const data = document.getElementById("delete-cat-data").value;
-  const temp = data;
-  console.log("data:", data);
-  fetch(`/api/cats/${data}/`, {
+  const name = document.getElementById("delete-name").value;
+  const object = {
+    name: name
+  };
+  const jsonData = JSON.stringify(object);
+  console.log("name:", name);
+  fetch(`/api/cats/${jsonData}/`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
@@ -113,25 +127,34 @@ deleteCatBtn.addEventListener("click", () => {
       return response.json();
     })
     .then(function(text) {
-      text = `Done!`;
-      document.getElementById("deleted-cat").innerHTML = text;
       const form = document.getElementById("delete-form");
       form.reset();
       fetchGetAllCats();
     });
 });
-//example query: {"name": "test1"}
 
 const editCatBtn = document.getElementById("edit-cat");
 editCatBtn.addEventListener("click", () => {
-  const data = document.getElementById("edit-cat-data").value;
+  const name = document.getElementById("edit-name").value;
+  const age = document.getElementById("edit-age").value;
+  const colour = document.getElementById("edit-colour").value;
+  const favourite_food = document.getElementById("edit-food").value;
+  const favourite_activity = document.getElementById("edit-act").value;
+  const object = {
+    name: name,
+    age: age,
+    colour: colour,
+    favourite_food: favourite_food,
+    favourite_activity: favourite_activity
+  };
+  const jsonData = JSON.stringify(object);
   fetch(`/api/cats/`, {
     method: "PATCH",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json"
     },
-    body: data
+    body: jsonData
   })
     .then(function(response) {
       return response.json();

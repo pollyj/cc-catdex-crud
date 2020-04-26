@@ -43,10 +43,22 @@ button {
   margin: 10px 0;
 }
 
-input {
+input,
+select {
   padding: 0px 10px;
+  margin: 2px 0px;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   border: solid 3px #772f1a;
+  font-size: 0.7em;
+  color: #696969;
+}
+label {
+  font-size: 0.7em;
+  margin-bottom: 2px;
+}
+
+select {
+  width: 192px;
 }
 
 .question {
@@ -56,4 +68,23 @@ input {
 .answer {
   padding-left: 15px;
   font-size: 1.2em;
+}
+
+.creator-div {
+  margin-top: 50px;
+}
+
+.creator {
+  font-size: 0.8em;
+  color: 772f1a;
+  margin-bottom: 0px;
+}
+
+.creator a {
+  color: #772f1a;
+  text-decoration: underline;
+}
+
+.creator a:hover {
+  color: rgb(238, 92, 92);
 }
