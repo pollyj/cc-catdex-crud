@@ -22,7 +22,7 @@ Cat.prototype.serialize = function() {
 module.exports = knex => {
   return {
     create: require("./create")(knex, Cat),
-    getAllCats: require("./getallcats")(knex, Cat),
+    getAllCats: require("./getAllCats")(knex, Cat),
     patch: require("./patch")(knex, Cat),
     delete: require("./delete")(knex, Cat)
   };

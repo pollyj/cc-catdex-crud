@@ -2,7 +2,7 @@ module.exports = (knex, Cat) => {
   return params => {
     const { name } = params;
     return knex("cats")
-      .where({ name })
+      .where({ name: name })
       .del()
       .then(() => {
         return knex("cats").select();

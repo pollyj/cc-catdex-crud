@@ -26,7 +26,7 @@ module.exports = models => {
 
   const getAllCats = (req, res) =>
     models.cats
-      .list()
+      .getAllCats()
       .then(cats => cats.map(cat => cat.serialize()))
       .then(cats => res.status(200).json(cats))
       .catch(err => res.status(400).send(err.message));
@@ -40,7 +40,7 @@ module.exports = models => {
 
   const patchCat = (req, res) =>
     models.cats
-      .update({
+      .patch({
         name: req.body.name,
         age: req.body.age,
         colour: req.body.colour,
