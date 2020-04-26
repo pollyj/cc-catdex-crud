@@ -1,111 +1,59 @@
-html {
-  height: 100%; /* make sure it is at least as tall as the viewport */
-  position: relative;
-}
 body {
-  height: 100%; /* force the BODY element to match the height of the HTML element */
+  font-family: "Fredoka One", cursive;
+  background-color: #eec170;
+  color: #772f1a;
 }
 
-.sign-in-btn {
-  text-align: center;
-  margin-top: 100px;
+h1 {
+  padding-top: 20px;
 }
 
-.modal-body {
-  height: 60px;
+h2 {
+  padding: 20px 0px;
+  margin-bottom: 20px;
+  font-size: 1.6em;
 }
 
-.content {
-  margin-left: 20%;
+#p {
+  line-height: 35px;
 }
 
-#side-nav-height {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 20%;
-  overflow: scroll;
-  background-color: #273c51;
+#cat-pen,
+#cat-deetz {
+  margin: 30px 0px;
+  padding: 50px;
+  background-color: rgb(255, 243, 221);
 }
 
-.message-area-height {
-  margin-bottom: 100px;
+.drawn-border {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: solid 8px #772f1a;
 }
 
-.side-menu-header,
-.side-menu-items {
+#cat-deetz {
+  font-size: 0.7em;
   padding: 10px;
-  margin: 0;
 }
 
-.side-menu-header {
-  border-bottom: 1px solid #3e546b;
-  color: #a2b0b9;
+button {
+  background-color: #f58549;
+  color: 772f1a;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: solid 4px #772f1a;
+  margin: 10px 0;
 }
 
-li {
-  list-style-type: none;
+input {
+  padding: 0px 10px;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: solid 3px #772f1a;
 }
 
-.side-menu-items {
-  color: #a2b0b9;
-  background-color: #17232f;
+.question {
+  font-size: 0.9em;
 }
 
-.side-menu-items:hover,
-.refresh:hover {
-  cursor: pointer;
-  color: #c5d2da;
-}
-
-.refresh {
-  float: right;
-}
-
-.message-list {
-  margin: 0;
-  padding: 5px 20px;
-}
-
-.message-list:first-child {
-  margin-top: 20px;
-}
-
-.message-item {
-  background-color: #f6f6f6;
-  border-radius: 10px;
-  margin: 0;
-  padding: 20px;
-}
-
-.message-info {
-  font-weight: bold;
-}
-
-.message-box {
-  position: absolute;
-  bottom: 0;
-  width: 80%;
-  padding: 20px;
-  margin: 0 !important;
-  background-color: #ccc;
-  position: fixed;
-  overflow: hidden;
-}
-
-.message-input {
-  float: left;
-  width: 80% !important;
-  border-radius: 4px 0 0 4px !important;
-}
-
-.message-button {
-  float: right;
-  width: 20%;
-  border-radius: 0 4px 4px 0 !important;
-}
-
-.chat-name {
-  padding-left: 20px;
+.answer {
+  padding-left: 15px;
+  font-size: 1.2em;
 }

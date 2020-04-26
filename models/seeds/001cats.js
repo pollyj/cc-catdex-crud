@@ -13,21 +13,21 @@ exports.seed = function(knex) {
         {
           name: "Fluffy",
           age: 7,
-          colour: "white",
+          colour: "tabby",
           favourite_food: "milk",
           favourite_activity: "sleeping"
         },
         {
           name: "Asawo",
           age: 6,
-          colour: "calico",
+          colour: "calico (black)",
           favourite_food: "salmon",
           favourite_activity: "chasing mice"
         },
         {
           name: "Jammy",
           age: 10,
-          colour: "orange striped",
+          colour: "grey-striped",
           favourite_food: "icecream",
           favourite_activity: "meowing"
         }

@@ -2,10 +2,9 @@
 
 <html>
   <head>
-    <title>Cat API</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Required meta tags -->
+    <title>Catdex</title>
     <meta charset="utf-8" />
+    <!-- Required meta tags -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -18,52 +17,69 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <div class="container">
       <div class="row">
-        <div class="col">
-          <h1>Cat Collection API</h1>
+        <div class="col" align="center">
+          <h1>Catdex</h1>
+          <h2>A fun REST-ful CRUD API for cat lovers.</h2>
         </div>
       </div>
+
       <div class="row">
-        <div class="col"></div>
+        <div class="col-4 create-btn">
+          <form id="create-form">
+            <button class="button" id="create-new-cat">Add A New Cat!</button>
+            <input class="input" type="text" id="add-cat-data" placeholder="" />
+          </form>
+          <div class="response" id="newly-created-cat">
+            <p></p>
+          </div>
+        </div>
+
+        <div class="col-4 delete-btn">
+          <form id="delete-form">
+            <button class="button" id="delete-cat">Delete A Cat!</button>
+            <input
+              class="input"
+              type="text"
+              id="delete-cat-data"
+              placeholder=""
+            />
+          </form>
+          <div class="response" id="deleted-cat"><p></p></div>
+        </div>
+
+        <div class="col-4 edit-btn">
+          <form id="edit-form">
+            <button class="button" id="edit-cat">Edit A Cat!</button>
+            <input class="input" type="text" id="edit-cat-data" />
+          </form>
+          <div class="response" id="edited-cat"><p></p></div>
+        </div>
       </div>
 
-      <button class="button" id="get-all-cats">Show All Cats!</button>
-      <div class="response" id="getResponse"></div>
-      <br />
+      <div class="row no-gutters">
+        <div id="cat-pen" class="col-8 drawn-border"></div>
+        <div id="cat-deetz" class="col-4 drawn-border"></div>
+      </div>
 
-      <button class="button" id="create-new-cat">Add A New Cat!</button>
-      <input
-        class="input"
-        type="text"
-        id="add-cat-data"
-        placeholder='{"first":    "last":    "phone":    }'
-      />
-      <div class="response" id="newly-created-cat"></div>
-      <br />
-
-      <button class="button" id="delete-cat">Delete A Cat ):</button>
-      <input
-        class="input"
-        type="text"
-        id="delete-cat-data"
-        placeholder="name"
-      />
-      <div class="response" id="deleted-cat"></div>
-      <br />
-      <button class="button" id="edit-cat">Edit A Cat!</button>
-      <input
-        class="input"
-        type="text"
-        id="edit-cat-data"
-        placeholder='{"first":    "last":    "phone":    }'
-      />
-      <div class="response" id="edited-cat"></div>
-      <br /><br />
+      <div class="row">
+        <div class="col show-btn">
+          <button class="button float-right" id="get-all-cats">
+            Refresh Cats
+          </button>
+          <div class="response" id="show-cats"></div>
+        </div>
+      </div>
+      <script src="js/app.js"></script>
     </div>
-    <script src="js/app.js"></script>
   </body>
 </html>
