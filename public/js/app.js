@@ -57,14 +57,10 @@ const fetchGetAllCats = () => {
         image.id = `${cat.name}`;
         image.addEventListener("click", () => {
           let string = fetchOneCat(cat.name);
-          console.log("cat.name:", cat.name);
-          console.log("string:", string);
         });
         catPen.appendChild(image);
         return `${cat.name} ${cat.age}`;
       });
-      //   .join("<br/>");
-      // document.getElementById("show-cats").innerHTML = text;
     });
 };
 
@@ -115,7 +111,6 @@ deleteCatBtn.addEventListener("click", () => {
     name: name
   };
   const jsonData = JSON.stringify(object);
-  console.log("name:", name);
   fetch(`/api/cats/${jsonData}/`, {
     method: "DELETE",
     headers: {
@@ -179,7 +174,6 @@ const fetchOneCat = name => {
       return response.json();
     })
     .then(function(text) {
-      console.log("text:", text);
       text = text.map(cat => {
         if (cat.name === name) {
           let string = `<span class="question">Name:</span><br>
@@ -194,7 +188,6 @@ const fetchOneCat = name => {
           <span class="answer">${cat.favourite_activity}</span><br><br>
           <span class="question">${cat.name} says:</span><br>
           <span class="answer">"Meow! Meooow!"</span>`;
-          console.log("string:", string);
           const catDeetz = document.getElementById("cat-deetz");
           catDeetz.innerHTML = "";
           catDeetz.innerHTML = string;
@@ -202,5 +195,3 @@ const fetchOneCat = name => {
       });
     });
 };
-
-//{"name": "test", "age": 5, "colour": "white", "favourite_food": "tuna", "favourite_activity": "warbling"}
