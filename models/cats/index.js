@@ -7,9 +7,6 @@ const Cat = function(dbCat) {
 };
 
 Cat.prototype.serialize = function() {
-  // we use a serializer to format the object and
-  // clean out any information that shouldn't be
-  // sent to the client, like passwords, for example.
   return {
     name: this.name,
     age: this.age,

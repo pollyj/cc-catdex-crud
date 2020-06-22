@@ -34,5 +34,3 @@ exports.seed = function(knex) {
       ]);
     });
 };
-
-//black, white, orange striped, grey, black and white patches, grey striped, calico

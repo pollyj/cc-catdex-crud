@@ -1,9 +1,6 @@
 const express = require("express");
 
 module.exports = models => {
-  /**
-   * Controller Logic
-   */
   const createCat = (req, res) =>
     models.cats
       .create({
@@ -15,12 +12,6 @@ module.exports = models => {
       })
       .then(cat => res.status(201).json(cat.serialize()))
       .catch(err => {
-        // if (err.message === "That username already exists") {
-        //   return models.users
-        //     .get({ username: req.body.username })
-        //     .then((user) => res.status(200).json(user.serialize()));
-        // }
-
         return res.status(400).send(err.message);
       });
 
@@ -30,13 +21,6 @@ module.exports = models => {
       .then(cats => cats.map(cat => cat.serialize()))
       .then(cats => res.status(200).json(cats))
       .catch(err => res.status(400).send(err.message));
-
-  // const getOneCat = (req, res) =>
-  //   models.cats
-  //     .list()
-  //     .then((cats) => cats.map((cat) => cat.serialize()))
-  //     .then((cats) => res.status(200).json(cats))
-  //     .catch((err) => res.status(400).send(err.message));
 
   const patchCat = (req, res) =>
     models.cats
@@ -58,13 +42,9 @@ module.exports = models => {
       .then(cats => res.status(200).json(cats))
       .catch(err => res.status(400).send(err.message));
 
-  /**
-   * Routes
-   */
   const router = express.Router();
   router.post("/", createCat);
   router.get("/", getAllCats);
-  // router.get("/:name", getOneCat);
   router.patch("/", patchCat);
   router.delete("/:name", deleteCat);
 
